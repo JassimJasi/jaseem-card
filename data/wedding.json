@@ -1,0 +1,66 @@
+{
+  "siteTitle": "Our Wedding",
+  "couple": {
+    "nameOne": "Jaseem",
+    "nameTwo": "Sithara",
+    "tagline": "TWO HEARTS  •  ONE JOURNEY  •  IN SHA ALLAH"
+  },
+  "event": {
+    "dateISO": "2027-02-14T11:00:00+05:30",
+    "dateDisplay": "14 FEBRUARY 2027",
+    "weekday": "SUNDAY",
+    "venue": "Green Valley Convention Centre",
+    "address": "Alandur, Chennai",
+    "mapsUrl": "https://maps.google.com/?q=Green+Valley+Convention+Centre+Alandur+Chennai"
+  },
+  "invitation": {
+    "eyebrow": "OUR INVITATION",
+    "title": "You are warmly invited!",
+    "paragraph": "With gratitude to Allah, we are delighted to share the joy of our wedding with you and your loved ones. Your presence will make our celebration even more special.",
+    "closing": "Join us in this beautiful new chapter of our lives.",
+    "rsvpLabel": "RSVP Now",
+    "rsvpUrl": "mailto:?subject=Wedding%20RSVP"
+  },
+  "dua": {
+    "arabic": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+    "translation": "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous.",
+    "reference": "Qur’an 25:74",
+    "blessing": "بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
+    "blessingTranslation": "May Allah bless you, shower His blessings upon you, and unite you both in goodness."
+  },
+  "story": {
+    "eyebrow": "OUR JOURNEY",
+    "title": "How It All Began",
+    "paragraph": "From strangers to best friends, and now partners for life. Our journey has been filled with faith, love and countless beautiful moments. We are excited to step into this new chapter together."
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "Our Story",
+      "href": "#story"
+    },
+    {
+      "label": "Events",
+      "href": "#details"
+    },
+    {
+      "label": "Family",
+      "href": "#family"
+    },
+    {
+      "label": "Venue",
+      "href": "#details"
+    },
+    {
+      "label": "Gallery",
+      "href": "#story"
+    },
+    {
+      "label": "RSVP",
+      "href": "#rsvp"
+    }
+  ]
+}
