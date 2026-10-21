@@ -1,9 +1,9 @@
 {
   "siteTitle": "Our Wedding",
   "couple": {
-    "nameOne": "Mohamed Faris P M",
-    "nameTwo": "Amira A",
-    "tagline": "TWO HEARTS  •  ONE JOURNEY  •  IN SHA ALLAH"
+    "nameOne": "Mohamed Faris",
+    "nameTwo": "Amira",
+    "tagline": "TWO HEARTS  •  ONE PROMISE  •  IN SHA ALLAH"
   },
   "event": {
     "dateISO": "2026-12-27T11:00:00+05:30",
@@ -11,7 +11,7 @@
     "weekday": "SUNDAY",
     "venue": "Nakshatra auditorium",
     "address": "Mannur, Palakkad",
-    "mapsUrl": "https://maps.app.goo.gl/BH9DLoc5neDVCkHA7" 
+    "mapsUrl": "https://maps.app.goo.gl/BH9DLoc5neDVCkHA7"
   },
   "invitation": {
     "eyebrow": "OUR INVITATION",
@@ -21,6 +21,43 @@
     "rsvpLabel": "RSVP Now",
     "rsvpUrl": "mailto:?subject=Wedding%20RSVP"
   },
+  "music": {
+    "src": "/music/wedding.mp3"
+  },
+  "familyCard": {
+    "groom": {
+      "label": "GROOM'S FAMILY",
+      "name": "Mohamed Faris P M",
+      "relationship": "SON OF",
+      "grandparentsLabel": "",
+      "parents": [
+        "Muhammad Ali",
+        "Safiya"
+      ],
+      "grandparents": [
+        "",
+        ""
+      ],
+      "residence": "Padippurakkad House, Mannur West, Palakkad",
+      "phone": "94978 02950"
+    },
+    "bride": {
+      "label": "BRIDE'S FAMILY",
+      "name": "Amira A I",
+      "relationship": "DAUGHTER OF",
+      "grandparentsLabel": "",
+      "parents": [
+        "Ismail K A",
+        "Ummusalma U K"
+      ],
+      "grandparents": [
+        "",
+        ""
+      ],
+      "residence": "Angadikkad House, Karimba, Palakkad",
+      "phone": ""
+    }
+  },
   "dua": {
     "arabic": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
     "translation": "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous.",
@@ -28,23 +65,18 @@
     "blessing": "بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
     "blessingTranslation": "May Allah bless you, shower His blessings upon you, and unite you both in goodness."
   },
-  "story": {
-    "eyebrow": "OUR JOURNEY",
-    "title": "How It All Began",
-    "paragraph": "From strangers to best friends, and now partners for life. Our journey has been filled with faith, love and countless beautiful moments. We are excited to step into this new chapter together."
-  },
   "navigation": [
     {
       "label": "Home",
       "href": "#home"
     },
     {
-      "label": "Our Story",
-      "href": "#story"
-    },
-    {
       "label": "Events",
       "href": "#details"
+    },
+    {
+      "label": "Family",
+      "href": "#family"
     },
     {
       "label": "Maps",

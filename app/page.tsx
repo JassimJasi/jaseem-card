@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import wedding from '../data/wedding.json';
 
 function Countdown() {
@@ -24,8 +24,74 @@ function Countdown() {
   </div>;
 }
 
+function FamilyCard({ family }: { family: typeof wedding.familyCard.groom }) {
+  return <article className="family-card reveal">
+    <p className="section-label">{family.label}</p>
+    <h2>{family.name}</h2>
+    {family.parents.length > 0 && <div className="family-detail"><span>{family.relationship}</span><p>{family.parents.join(' & ')}</p></div>}
+    {family.grandparents.length > 0 && <div className="family-detail"><span>{family.grandparentsLabel}</span><p></p></div>}
+    {family.residence && <div className="family-detail"><span>RESIDENCE</span><p>{family.residence}</p></div>}
+    {family.phone && <p className="family-phone">☎ {family.phone}</p>}
+    <div className="flourish"><i />❧<i /></div>
+  </article>;
+}
+
 export default function Home() {
+  const [coverOpen, setCoverOpen] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    elements.forEach(element => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
+  const openInvitation = async () => {
+    setCoverOpen(true);
+    if (audioRef.current) {
+      try {
+        await audioRef.current.play();
+        setMusicPlaying(true);
+      } catch {
+        setMusicPlaying(false);
+      }
+    }
+  };
+
+  const toggleMusic = async () => {
+    if (!audioRef.current) return;
+    if (musicPlaying) {
+      audioRef.current.pause();
+      setMusicPlaying(false);
+      return;
+    }
+    try {
+      await audioRef.current.play();
+      setMusicPlaying(true);
+    } catch {
+      setMusicPlaying(false);
+    }
+  };
+
   return <main>
+    <audio ref={audioRef} src={wedding.music.src} loop preload="none" onEnded={() => setMusicPlaying(false)} />
+    <button className={`invitation-cover${coverOpen ? ' invitation-cover-open' : ''}`} onClick={openInvitation} aria-label="Open the wedding invitation">
+      <span className="cover-ornament" aria-hidden="true">❧</span>
+      <span className="cover-bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+      <span className="cover-transliteration">Bismillāhir-Raḥmānir-Raḥīm</span>
+      <span className="cover-invite-label">YOU ARE CORDIALLY INVITED TO</span>
+      <span className="cover-couple">{wedding.couple.nameOne}<i>&amp;</i>{wedding.couple.nameTwo}</span>
+      <span className="cover-open-label">OPEN INVITATION <b>↓</b></span>
+    </button>
     <header className="topbar">
       <a className="brand" href="#home"><span className="brand-sprig">❧</span>{wedding.siteTitle}</a>
       <nav aria-label="Main navigation">{wedding.navigation.map(item => <a key={item.label} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined}>{item.label}</a>)}</nav>
@@ -66,12 +132,12 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="story section" id="story">
-      <div className="story-image reveal" role="img" aria-label="Sage green wedding book and delicate flowers" />
-      <div className="story-copy reveal"><p className="section-label">{wedding.story.eyebrow}</p><h2>{wedding.story.title}</h2><p>{wedding.story.paragraph}</p><div className="flourish story-flourish"><i />❧<i /></div></div>
+    <section className="family-card-section" id="family">
+      <FamilyCard family={wedding.familyCard.groom} />
+      <FamilyCard family={wedding.familyCard.bride} />
     </section>
 
-    <section className="dua-section" id="Dua">
+    <section className="dua-section reveal" id="dua">
       <p className="section-label">A PRAYER FOR OUR NEW BEGINNING</p>
       <h2 className="arabic" lang="ar" dir="rtl">{wedding.dua.arabic}</h2>
       <p className="translation">“{wedding.dua.translation}”</p>
@@ -82,5 +148,8 @@ export default function Home() {
     </section>
 
     <footer><span className="brand-sprig">❧</span><p>Made with love and gratitude to Allah</p><span>{wedding.couple.nameOne} &amp; {wedding.couple.nameTwo}</span></footer>
+    <button className="music-toggle" onClick={toggleMusic} aria-label={musicPlaying ? 'Pause music' : 'Play music'} title={musicPlaying ? 'Pause music' : 'Play music'}>
+      <span aria-hidden="true">{musicPlaying ? 'Ⅱ' : '♫'}</span>{musicPlaying ? 'Pause music' : 'Play music'}
+    </button>
   </main>;
 }
