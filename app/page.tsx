@@ -71,7 +71,7 @@ export default function Home() {
       <div className="story-copy reveal"><p className="section-label">{wedding.story.eyebrow}</p><h2>{wedding.story.title}</h2><p>{wedding.story.paragraph}</p><div className="flourish story-flourish"><i />❧<i /></div></div>
     </section>
 
-    <section className="dua-section" id="family">
+    <section className="dua-section" id="Dua">
       <p className="section-label">A PRAYER FOR OUR NEW BEGINNING</p>
       <h2 className="arabic" lang="ar" dir="rtl">{wedding.dua.arabic}</h2>
       <p className="translation">“{wedding.dua.translation}”</p>
