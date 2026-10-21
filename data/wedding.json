@@ -1,17 +1,17 @@
 {
   "siteTitle": "Our Wedding",
   "couple": {
-    "nameOne": "Jaseem",
-    "nameTwo": "Sithara",
+    "nameOne": "Mohamed Faris P M",
+    "nameTwo": "Amira A",
     "tagline": "TWO HEARTS  •  ONE JOURNEY  •  IN SHA ALLAH"
   },
   "event": {
-    "dateISO": "2027-02-14T11:00:00+05:30",
-    "dateDisplay": "14 FEBRUARY 2027",
+    "dateISO": "2026-12-27T11:00:00+05:30",
+    "dateDisplay": "27 FEBRUARY 2026",
     "weekday": "SUNDAY",
-    "venue": "Green Valley Convention Centre",
-    "address": "Alandur, Chennai",
-    "mapsUrl": "https://maps.google.com/?q=Green+Valley+Convention+Centre+Alandur+Chennai"
+    "venue": "Nakshatra auditorium",
+    "address": "Mannur, Palakkad",
+    "mapsUrl": "https://maps.app.goo.gl/BH9DLoc5neDVCkHA7" 
   },
   "invitation": {
     "eyebrow": "OUR INVITATION",
@@ -51,16 +51,9 @@
       "href": "#family"
     },
     {
-      "label": "Venue",
-      "href": "#details"
-    },
-    {
-      "label": "Gallery",
-      "href": "#story"
-    },
-    {
-      "label": "RSVP",
-      "href": "#rsvp"
+      "label": "Maps",
+      "href": "https://maps.app.goo.gl/BH9DLoc5neDVCkHA7",
+      "external": true
     }
   ]
 }

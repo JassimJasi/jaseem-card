@@ -28,8 +28,7 @@ export default function Home() {
   return <main>
     <header className="topbar">
       <a className="brand" href="#home"><span className="brand-sprig">❧</span>{wedding.siteTitle}</a>
-      <nav>{wedding.navigation.map(item => <a key={item.label} href={item.href}>{item.label}</a>)}</nav>
-      <a className="mobile-rsvp" href={wedding.invitation.rsvpUrl}>RSVP</a>
+      <nav aria-label="Main navigation">{wedding.navigation.map(item => <a key={item.label} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined}>{item.label}</a>)}</nav>
     </header>
 
     <section className="hero" id="home">
@@ -50,7 +49,6 @@ export default function Home() {
         <div className="flourish"><i />❧<i /></div>
         <p>{wedding.invitation.paragraph}</p>
         <p className="script-line">{wedding.invitation.closing}</p>
-        <a className="rsvp-button" href={wedding.invitation.rsvpUrl}><span>♡</span>{wedding.invitation.rsvpLabel}</a>
       </div>
       <div className="arch-wrap reveal"><div className="arch-image" role="img" aria-label="Botanical vase in warm sunlight" /><svg className="line-leaves" viewBox="0 0 100 180" aria-hidden="true"><path d="M48 176 C47 130 47 75 67 15 M48 145 C21 137 12 115 15 97 C34 105 46 120 48 145 M53 116 C76 108 85 87 82 70 C65 80 55 96 53 116 M58 82 C36 72 30 53 35 38 C51 49 58 65 58 82 M65 48 C80 43 88 29 87 17 C74 24 67 35 65 48" fill="none" stroke="currentColor" strokeWidth="1"/></svg></div>
     </section>
